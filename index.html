@@ -4,32 +4,56 @@
   <meta charset="UTF-8" />
   <title>Truelogist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Truelogist — Digital Execution Validator" />
+  <meta name="description" content="Truelogist — Execution Validator for Digital Documents" />
   <style>
     body {
-      font-family: sans-serif;
-      background: #111;
-      color: #eee;
+      font-family: system-ui, sans-serif;
+      background: #0c0c0c;
+      color: #eaeaea;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      text-align: center;
       height: 100vh;
       margin: 0;
-      text-align: center;
+      padding: 2em;
     }
     h1 {
-      font-size: 2rem;
+      font-size: 2.4em;
+      margin-bottom: 0.4em;
     }
-    p {
-      max-width: 600px;
-      margin-top: 1em;
-      color: #ccc;
+    h2 {
+      font-size: 1.2em;
+      font-weight: normal;
+      color: #bbbbbb;
+      margin-top: 0;
+    }
+    .tagline {
+      margin-top: 2em;
+      font-size: 0.9em;
+      color: #888;
+    }
+    a.button {
+      margin-top: 2em;
+      display: inline-block;
+      padding: 0.6em 1.4em;
+      border: 1px solid #66ccff;
+      border-radius: 8px;
+      color: #66ccff;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+    }
+    a.button:hover {
+      background: #66ccff;
+      color: #0c0c0c;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to Truelogist</h1>
-  <p>This is the official entry point for the Truelogist project.</p>
+  <h1>Truelogist</h1>
+  <h2>Execution validator comparing facts against the documented intentions</h2>
+  <p class="tagline">FIATA-ready | Legal-grade | Document-driven</p>
+  <a class="button" href="https://github.com/AndreyBalandin-Git/truelogist" target="_blank">View GitHub Repository</a>
 </body>
 </html>
