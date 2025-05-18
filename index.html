@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <title>Truelogist</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: system-ui, sans-serif;
             background-color: #ffffff;
             color: #222;
-            max-width: 720px;
-            margin: 40px auto;
-            padding: 0 20px;
-            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
         h1 {
             font-size: 2.4em;
@@ -22,7 +26,7 @@
         }
         h2 {
             font-size: 1.4em;
-            margin-top: 2em;
+            margin-top: 1.5em;
         }
         .tagline {
             font-size: 1.2em;
@@ -48,6 +52,9 @@
         .try-button:hover {
             background-color: #005fa3;
         }
+        p {
+            max-width: 700px;
+        }
     </style>
 </head>
 <body>
@@ -64,7 +71,7 @@
         Applicable across law, AI, crisis systems, and digital documents.
     </p>
 
-    <p class="fiata-ready">FIATA-ready</p>
+    <p class="fiata-ready">FIATA ready</p>
 
     <a href="demo.html" class="try-button">Try Truelogist with an eFBL example</a>
 
