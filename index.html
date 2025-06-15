@@ -1,4 +1,6 @@
+<!-- Truelogist Website: Institutional Structure (All Pages) -->
 
+<!-- GLOBAL STYLES AND HEADER -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +9,43 @@
   <meta name="description" content="Truelogist – Sovereign Initiative for Trusted Validation in Digital Trade" />
   <title>Truelogist Initiative</title>
   <link rel="stylesheet" href="./styles.css" />
+<style>
+  /* Mobile-friendly header */
+  header {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .logo {
+    max-height: 48px;
+    width: auto;
+  }
+  @media (max-width: 600px) {
+    body {
+      padding: 1rem;
+    }
+    nav ul {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .cta {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .button {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
 </head>
 <body>
   <header>
-    <a href="./index.html">
+    <a href="/">
       <img src="./logo.svg" alt="Truelogist Logo" class="logo" />
     </a>
     <nav>
@@ -24,6 +59,7 @@
     </nav>
   </header>
 
+  <!-- HOME PAGE -->
   <main id="home">
     <section class="hero">
       <h1>Truelogist is a sovereign initiative for trusted validation in digital trade.</h1>
@@ -35,6 +71,7 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <p>Contact: <a href="mailto:info@truelogist.org">info@truelogist.org</a></p>
     <p>Truelogist is an independent non-incorporated initiative with international scope.</p>
