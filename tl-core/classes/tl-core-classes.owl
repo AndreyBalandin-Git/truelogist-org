@@ -118,16 +118,16 @@
     <!-- http://www.truelogist.org/tl-core/classes#Sition -->
 
     <owl:Class rdf:about="http://www.truelogist.org/tl-core/classes#Sition">
-        <rdfs:comment xml:lang="en">1. Sition is an indivisible ontological unit representing a discrete execution point within the execution structure.
+        <rdfs:comment xml:lang="en">Sition is an indivisible ontological unit representing a discrete and verifiable execution point. Sition anchors the execution chain by structurally connecting Valion instances through Transion boundaries.</rdfs:comment>
+        <rdfs:label xml:lang="en">Sition</rdfs:label>
+        <skos:definition xml:lang="en">1. Sition is an indivisible ontological unit representing a discrete execution point within the execution structure.
 2. It is a stable ontological point associated with a Valion and serves as a semantically verifiable anchor of execution.
 3. It is not a physical location, temporal state, event, state, or process.
 4. Sition is a fixed ontological point within the execution chain, occupying a structural position in the model.
 5. Each Sition may serve as the start or end of a Transion.
 6. Every continuous execution phase must satisfy the axiom: |Sition| = |Transion| + 1.
 7. Each Sition may be linked to zero or more Valion instances via the property hasLinkedValion (0..N), representing the structural association of executed content within the semantic logic of the model.
-8. The collection of all Sitions defines the ontological space of execution, enabling traceability, semantic positioning, and logical consistency.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Sition is an indivisible ontological unit representing a discrete and verifiable execution point. Sition anchors the execution chain by structurally connecting Valion instances through Transion boundaries.</rdfs:comment>
-        <rdfs:label xml:lang="en">Sition</rdfs:label>
+8. The collection of all Sitions defines the ontological space of execution, enabling traceability, semantic positioning, and logical consistency.</skos:definition>
     </owl:Class>
     
 
