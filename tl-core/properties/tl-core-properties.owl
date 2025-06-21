@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.truelogist.org/tl-core/properties#"
+     xml:base="http://www.truelogist.org/tl-core/properties"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:tl-classes="http://www.truelogist.org/tl-core/classes#">
+    <owl:Ontology rdf:about="http://www.truelogist.org/tl-core/properties">
+        <owl:imports rdf:resource="http://www.truelogist.org/tl-core/classes"/>
+        <dc:creator xml:lang="en">Andrey Balandin</dc:creator>
+        <dc:date xml:lang="en">2025-06-21</dc:date>
+        <rdfs:comment xml:lang="en">This ontology allows SPARQL-based inverse access for properties: ^:hasMeasure, ^:hasAttribute, and ^:hasLinkedValion. Use of owl:inverseOf is prohibited by architectural design.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This ontology defines the core object properties for the Truelogist validation machine. All properties correspond to non-symmetric, non-inverse execution pathways in the TL reasoning core. SPARQL-based inverse access is explicitly limited to three properties and owl:inverseOf is forbidden by design.</rdfs:comment>
+        <owl:versionIRI>http://www.truelogist.org/tl-core/properties/v1.0.0</owl:versionIRI>
+        <owl:versionInfo xml:lang="en">Truelogist TL-Core Properties v1.0.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+        <rdfs:comment xml:lang="en">Defines the optional structural reference from a Causion to its conceptual point of origin. This property semantically anchors the beginning of a potential execution path. It does not imply temporal initiation or physical location. Cardinality: 0..1.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.truelogist.org/tl-core/properties#hasAttribute -->
+
+    <owl:ObjectProperty rdf:about="http://www.truelogist.org/tl-core/properties#hasAttribute">
+        <rdfs:domain rdf:resource="http://www.truelogist.org/tl-core/classes#Valion"/>
+        <rdfs:range rdf:resource="http://www.truelogist.org/tl-core/classes#Attribute"/>
+        <rdfs:comment xml:lang="en">Connects a Valion to an Attribute object (qualitative descriptor) used for categorical validation based on identity, classification, or type. Each Attribute must contain a qualitative value, represented either as skos:Concept or rdf:langString. This property does not carry quantitative semantics and is distinct from hasMeasure. Cardinality: 0..N.</rdfs:comment>
+        <rdfs:label xml:lang="en">hasAttribute</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.truelogist.org/tl-core/properties#hasCausionalDestinationSition -->
+
+    <owl:ObjectProperty rdf:about="http://www.truelogist.org/tl-core/properties#hasCausionalDestinationSition">
+        <rdfs:domain rdf:resource="http://www.truelogist.org/tl-core/classes#Causion"/>
+        <rdfs:range rdf:resource="http://www.truelogist.org/tl-core/classes#Sition"/>
+        <rdfs:comment xml:lang="en">Defines the optional structural reference from a Causion to its intended destination point. This property provides a conceptual target within the execution logic. It does not imply fulfillment, motion, or outcome. Cardinality: 0..1.</rdfs:comment>
+        <rdfs:label xml:lang="en">hasCausionalDestinationSition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.truelogist.org/tl-core/properties#hasCausionalOriginSition -->
+
+    <owl:ObjectProperty rdf:about="http://www.truelogist.org/tl-core/properties#hasCausionalOriginSition">
+        <rdfs:domain rdf:resource="http://www.truelogist.org/tl-core/classes#Causion"/>
+        <rdfs:range rdf:resource="http://www.truelogist.org/tl-core/classes#Sition"/>
+        <rdfs:comment xml:lang="en">Defines the optional structural reference from a Causion to its conceptual point of origin. This property semantically anchors the beginning of a potential execution path. It does not imply temporal initiation or physical location. Cardinality: 0..1.</rdfs:comment>
+        <rdfs:label xml:lang="en">hasCausionalOriginSition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.truelogist.org/tl-core/properties#hasCausionalTransion -->
+
+    <owl:ObjectProperty rdf:about="http://www.truelogist.org/tl-core/properties#hasCausionalTransion">
+        <rdfs:domain rdf:resource="http://www.truelogist.org/tl-core/classes#Causion"/>
+        <rdfs:range rdf:resource="http://www.truelogist.org/tl-core/classes#Transion"/>
+        <rdfs:comment xml:lang="en">Links a Causion to the Transion instances it structurally initiates. This property establishes a non-temporal, logical derivation path. It does not indicate causal action or processual control. Cardinality: 0..N.</rdfs:comment>
+        <rdfs:label xml:lang="en">hasCausionalTransion</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.truelogist.org/tl-core/properties#hasCausionalValion -->
+
+    <owl:ObjectProperty rdf:about="http://www.truelogist.org/tl-core/properties#hasCausionalValion">
+        <rdfs:domain rdf:resource="http://www.truelogist.org/tl-core/classes#Causion"/>
+        <rdfs:range rdf:resource="http://www.truelogist.org/tl-core/classes#Valion"/>
+        <rdfs:comment xml:lang="en">Associates a Causion with Valion instances representing content declared for execution. This property identifies the semantic intent to validate specific content. It does not trigger execution or assert completeness. Cardinality: 0..N.</rdfs:comment>
+        <rdfs:label xml:lang="en">hasCausionalValion</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.truelogist.org/tl-core/properties#hasEndSition -->
+
+    <owl:ObjectProperty rdf:about="http://www.truelogist.org/tl-core/properties#hasEndSition">
+        <rdfs:domain rdf:resource="http://www.truelogist.org/tl-core/classes#Transion"/>
+        <rdfs:range rdf:resource="http://www.truelogist.org/tl-core/classes#Sition"/>
+        <rdfs:comment xml:lang="en">Specifies the terminal Sition structurally linked to a Transion. This property defines the target point of the semantic shift. It is part of the indivisible Sition-Transion-Sition triad and must be uniquely assigned. Cardinality: 1.</rdfs:comment>
+        <rdfs:label xml:lang="en">hasEndSition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.truelogist.org/tl-core/properties#hasLinkedValion -->
+
+    <owl:ObjectProperty rdf:about="http://www.truelogist.org/tl-core/properties#hasLinkedValion">
+        <rdfs:domain rdf:resource="http://www.truelogist.org/tl-core/classes#Sition"/>
+        <rdfs:range rdf:resource="http://www.truelogist.org/tl-core/classes#Valion"/>
+        <rdfs:comment xml:lang="en">Links a Sition to one or more Valion instances representing validated execution content. This property semantically anchors content to a specific execution point. It does not imply causation or ownership. Cardinality: 0..N.</rdfs:comment>
+        <rdfs:label xml:lang="en">hasLinkedValion</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.truelogist.org/tl-core/properties#hasMeasure -->
+
+    <owl:ObjectProperty rdf:about="http://www.truelogist.org/tl-core/properties#hasMeasure">
+        <rdfs:domain rdf:resource="http://www.truelogist.org/tl-core/classes#Valion"/>
+        <rdfs:range rdf:resource="http://www.truelogist.org/tl-core/classes#Measure"/>
+        <rdfs:comment xml:lang="en">Connects a Valion to a Measure object (quantitative descriptors) used to validate quantitative characteristics such as amount, duration, or size. Each Measure must declare a literal value of type xsd:decimal, xsd:duration, or xsd:dateTime. This property supports arithmetic comparisons but does not assert truth conditions on its own. Cardinality: 0..N.</rdfs:comment>
+        <rdfs:label xml:lang="en">hasMeasure</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.truelogist.org/tl-core/properties#hasStartSition -->
+
+    <owl:ObjectProperty rdf:about="http://www.truelogist.org/tl-core/properties#hasStartSition">
+        <rdfs:domain rdf:resource="http://www.truelogist.org/tl-core/classes#Transion"/>
+        <rdfs:range rdf:resource="http://www.truelogist.org/tl-core/classes#Sition"/>
+        <rdfs:comment xml:lang="en">Specifies the initial Sition structurally linked to a Transion. This property designates the conceptual point from which a semantic shift originates. It must always be used together with hasEndSition in a 1:1 mapping. Cardinality: 1.</rdfs:comment>
+        <rdfs:label xml:lang="en">hasStartSition</rdfs:label>
+    </owl:ObjectProperty>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
