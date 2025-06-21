@@ -8,9 +8,11 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:tl-classes="http://www.truelogist.org/tl-core/classes#">
     <owl:Ontology rdf:about="http://www.truelogist.org/tl-core/properties">
         <owl:imports rdf:resource="http://www.truelogist.org/tl-core/classes"/>
+        <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
         <dc:creator xml:lang="en">Andrey Balandin</dc:creator>
         <dc:date xml:lang="en">2025-06-21</dc:date>
         <rdfs:comment xml:lang="en">This ontology allows SPARQL-based inverse access for properties: ^:hasMeasure, ^:hasAttribute, and ^:hasLinkedValion. Use of owl:inverseOf is prohibited by architectural design.</rdfs:comment>
@@ -147,6 +149,122 @@
         <rdfs:comment xml:lang="en">Specifies the initial Sition structurally linked to a Transion. This property designates the conceptual point from which a semantic shift originates. It must always be used together with hasEndSition in a 1:1 mapping. Cardinality: 1.</rdfs:comment>
         <rdfs:label xml:lang="en">hasStartSition</rdfs:label>
     </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.truelogist.org/tl-core/classes#Causion -->
+
+    <rdf:Description rdf:about="http://www.truelogist.org/tl-core/classes#Causion">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.truelogist.org/tl-core/properties#hasCausionalDestinationSition"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.truelogist.org/tl-core/classes#Sition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.truelogist.org/tl-core/properties#hasCausionalOriginSition"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.truelogist.org/tl-core/classes#Sition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.truelogist.org/tl-core/properties#hasCausionalTransion"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.truelogist.org/tl-core/classes#Transion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.truelogist.org/tl-core/properties#hasCausionalValion"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.truelogist.org/tl-core/classes#Valion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.truelogist.org/tl-core/properties#hasCausionalDestinationSition"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.truelogist.org/tl-core/classes#Sition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.truelogist.org/tl-core/properties#hasCausionalOriginSition"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.truelogist.org/tl-core/classes#Sition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.truelogist.org/tl-core/classes#Sition -->
+
+    <rdf:Description rdf:about="http://www.truelogist.org/tl-core/classes#Sition">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.truelogist.org/tl-core/properties#hasLinkedValion"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.truelogist.org/tl-core/classes#Valion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.truelogist.org/tl-core/classes#Transion -->
+
+    <rdf:Description rdf:about="http://www.truelogist.org/tl-core/classes#Transion">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.truelogist.org/tl-core/properties#hasEndSition"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.truelogist.org/tl-core/classes#Sition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.truelogist.org/tl-core/properties#hasStartSition"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.truelogist.org/tl-core/classes#Sition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.truelogist.org/tl-core/classes#Valion -->
+
+    <rdf:Description rdf:about="http://www.truelogist.org/tl-core/classes#Valion">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.truelogist.org/tl-core/properties#hasAttribute"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.truelogist.org/tl-core/classes#Attribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.truelogist.org/tl-core/properties#hasMeasure"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.truelogist.org/tl-core/classes#Measure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
 </rdf:RDF>
 
 
