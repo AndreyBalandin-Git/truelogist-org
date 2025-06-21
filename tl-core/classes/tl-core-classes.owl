@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/aa/ontologies/2025/5/untitled-ontology-11/"
+     xml:base="http://www.semanticweb.org/aa/ontologies/2025/5/untitled-ontology-11/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about="http://www.truelogist.org/tl-core/classes">
+        <dc:creator xml:lang="en">Andrey Balandin</dc:creator>
+        <dc:date xml:lang="en">2025-06-21</dc:date>
+        <rdfs:comment xml:lang="en">This file defines the six indivisible TL-Core classes used by the Truelogist validation reasoning engine. No properties, cardinalities, or subclass axioms are included here. This module is designed for independent reuse and strict separation from execution logic.</rdfs:comment>
+        <owl:versionIRI xml:lang="en">http://www.truelogist.org/tl-core/classes/v1.0.0</owl:versionIRI>
+        <owl:versionInfo xml:lang="en">Truelogist TL-Core Classes v1.0.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#versionIRI -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionIRI"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.truelogist.org/tl-core/classes#Attribute -->
+
+    <owl:Class rdf:about="http://www.truelogist.org/tl-core/classes#Attribute">
+        <rdfs:comment xml:lang="en">Attribute is a non-quantifiable semantic classifier linked to a Valion, enabling categorical validation based on identity, specification, or classification schemes.</rdfs:comment>
+        <rdfs:label xml:lang="en">Attribute</rdfs:label>
+        <skos:definition xml:lang="en">1. Attribute is an ontological unit representing a non-quantifiable characteristic of a Valion.
+2. It defines a categorical property - such as color, grade, specification, type, or classification code - used to qualify or classify the content of execution. Only conceptually discrete values, including temporal categories like fiscal years or quarters, are permitted in Attribute; scalar temporal values (e.g., durations, deadlines) must be modeled exclusively via Measure.
+3. Attribute is not a tag, label, description, or quantity; it does not represent a measurable value but a qualitative identity.
+4. It enables logical comparison based on identity, equivalence, or conceptual proximity rather than arithmetic computation.
+5. Attribute is linked to a Valion via inverse querying of the property hasAttribute (SPARQL ^:hasAttribute), which is declared unidirectionally on the Valion class.
+6. A valid Attribute includes a reference to a concept, code, or value from an accepted classification scheme.
+7. Its structure enables validation patterns using semantic matching (e.g., owl:sameAs, skos:exactMatch), ontology alignment, or traversal of classification hierarchies. Classification schemes such as WCO HS, GNIT, or national customs codes must not reside in the TL-Core but shall be represented as SKOS concept schemes in the upper ontological layers of the Truelogist model.
+8. Attribute-based reasoning in Truelogist ensures that execution is validated not only by quantity (via Measure) but also by kind, category, or classification identity (via Attribute).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.truelogist.org/tl-core/classes#Causion -->
+
+    <owl:Class rdf:about="http://www.truelogist.org/tl-core/classes#Causion">
+        <rdfs:comment xml:lang="en">Causion is an indivisible ontological unit representing the semantic cause of execution, logically preceding all forms of Transion. It serves as the non-agentive, non-temporal prerequisite for the traceable logic of execution.</rdfs:comment>
+        <rdfs:label xml:lang="en">Causion</rdfs:label>
+        <skos:definition xml:lang="en">1. Causion is an indivisible ontological unit representing the semantic cause of execution.
+2. It serves as the abstract and non-temporal origin from which execution may be logically derived.
+3. Causion is not an agent, event, process, or expression of will; it does not initiate or unfold.
+4. It stands logically upstream of Transion and provides the initial structural reference point in the execution chain.
+5. Causion may optionally be linked to hasCausionalOriginSition and/or hasCausionalDestinationSition, and to (0..N) Transion instances.
+6. A valid execution trace must begin with a Causion, but Causion does not require execution to occur. Without Causion, no Transion can exist.
+7. A Causion may reference an optional starting point (hasCausionalOriginSition), an optional target (hasCausionalDestinationSition), and a non-mandatory set of hasCausionalValion (0..N) Valion instances, each representing a semantic placeholder for the content declared for execution.
+8. Causion is the logical prerequisite for execution reasoning. It allows validation chains to trace back to a cause without assuming intent or activity.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.truelogist.org/tl-core/classes#Measure -->
+
+    <owl:Class rdf:about="http://www.truelogist.org/tl-core/classes#Measure">
+        <rdfs:comment xml:lang="en">Measure is a quantifiable semantic scalar linked to a Valion, enabling arithmetic validation of execution magnitude using numeric or scalar temporal values.</rdfs:comment>
+        <rdfs:label xml:lang="en">Measure</rdfs:label>
+        <skos:definition xml:lang="en">1. Measure is a quantifiable ontological unit representing a semantic scalar associated with the declared or realized magnitude of execution.
+2. It expresses a characteristic of a Valion enabling arithmetic comparison: numeric such as weight, volume, distance, and temporal scalars such as deadlines, expiry, or duration (as scalar values only).
+3. Measure is not the execution itself, nor a raw value or calculation; it is a structured semantic descriptor.
+4. It functions as a quantitative semantic qualifier of execution, supporting validation of whether declared and realized quantities align.
+5. Measure is linked to a Valion via inverse querying of the property hasMeasure (SPARQL ^:hasMeasure), which is declared unidirectionally on the Valion class.
+6. A valid Measure must include a value expressed as numeric datatypes (e.g., kilograms, liters, hours) or scalar temporal datatypes (e.g., xsd:date, xsd:dateTime, xsd:duration used as values, not intervals) to support validation of time-sensitive conditions.
+7. Its internal structure supports validation patterns such as equality, greater-than, or less-than logic.
+8. Measure enables precise quantitative reasoning over execution and ensures traceability of magnitudes in the model.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.truelogist.org/tl-core/classes#Sition -->
+
+    <owl:Class rdf:about="http://www.truelogist.org/tl-core/classes#Sition">
+        <rdfs:comment xml:lang="en">1. Sition is an indivisible ontological unit representing a discrete execution point within the execution structure.
+2. It is a stable ontological point associated with a Valion and serves as a semantically verifiable anchor of execution.
+3. It is not a physical location, temporal state, event, state, or process.
+4. Sition is a fixed ontological point within the execution chain, occupying a structural position in the model.
+5. Each Sition may serve as the start or end of a Transion.
+6. Every continuous execution phase must satisfy the axiom: |Sition| = |Transion| + 1.
+7. Each Sition may be linked to zero or more Valion instances via the property hasLinkedValion (0..N), representing the structural association of executed content within the semantic logic of the model.
+8. The collection of all Sitions defines the ontological space of execution, enabling traceability, semantic positioning, and logical consistency.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Sition is an indivisible ontological unit representing a discrete and verifiable execution point. Sition anchors the execution chain by structurally connecting Valion instances through Transion boundaries.</rdfs:comment>
+        <rdfs:label xml:lang="en">Sition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.truelogist.org/tl-core/classes#Transion -->
+
+    <owl:Class rdf:about="http://www.truelogist.org/tl-core/classes#Transion">
+        <rdfs:comment xml:lang="en">Transion is an indivisible ontological unit representing a discrete semantic shift between two contiguous Sition instances, forming a non-temporal and non-agentive bridge within the execution structure.</rdfs:comment>
+        <rdfs:label xml:lang="en">Transion</rdfs:label>
+        <skos:definition xml:lang="en">1. Transion is an indivisible ontological unit representing a discrete ontological link between two Sition that are immediately adjacent to one another.
+2. It defines a semantic shift between two distinct Sition instances and is originated from a Causion instance.
+3. Transion has not intermediate state, delay, or temporal extension; is not an action, event, or temporal process; it carries no temporal markers or causal agency.
+4. It structurally connects exactly two Sition instances that are conceptually contiguous - joined edge-to-edge: one as hasStartSition and one as hasEndSition.
+5. Each Transion exists as an intermediate link within the chain of execution and cannot exist without its adjacent Sition nodes such that the presence of a Transion implies the termination of the prior state and the immediate onset of the next.
+6. It supports the logical constraint: |Sition| = |Transion| + 1.
+7. A Transion does not encapsulate validation content directly but enables traceable comparison by linking the Sition nodes where Valion instances may reside.
+8. It is essential in reasoning templates as the semantic bridge for validating continuity and transformation between declared and observed execution states.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.truelogist.org/tl-core/classes#Valion -->
+
+    <owl:Class rdf:about="http://www.truelogist.org/tl-core/classes#Valion">
+        <rdfs:comment xml:lang="en">Valion is an indivisible ontological unit representing a declared or realized content subject to validation. Valion serves as the referential core for reasoning over Measure and Attribute.</rdfs:comment>
+        <rdfs:label xml:lang="en">Valion</rdfs:label>
+        <skos:definition xml:lang="en">1. Valion is an indivisible ontological unit representing content subject to validation within reasoning.
+2. It represents the declared or realized semantic unit that enables measurable and classifiable validation, not a material or structural element.
+3. Valion is not an object, process, quantity, or material entity; it does not act or move.
+4. It is semantically linked to Sition instances with verifiable content through a logical (non-structural) relation, as clarified in point 5.
+5. Valion may be structurally associated with one or more Sition instances, but only through inverse querying via the property hasLinkedValion, which is declared unidirectionally on the Sition class and accessed ontologically through SPARQL inversion.
+6. Valion must be used in conjunction with Measure and Attribute to enable validation.
+7. Valion may include (0..N) Measure and Attribute specifications for validation purposes through optional properties for quantitative (hasMeasure) and qualitative (hasAttribute) semantics.
+8. Valion enables semantic comparison between declared and actual execution, providing the necessary referent in the validation logic.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.truelogist.org/tl-core/classes#Attribute"/>
+            <rdf:Description rdf:about="http://www.truelogist.org/tl-core/classes#Causion"/>
+            <rdf:Description rdf:about="http://www.truelogist.org/tl-core/classes#Measure"/>
+            <rdf:Description rdf:about="http://www.truelogist.org/tl-core/classes#Sition"/>
+            <rdf:Description rdf:about="http://www.truelogist.org/tl-core/classes#Transion"/>
+            <rdf:Description rdf:about="http://www.truelogist.org/tl-core/classes#Valion"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
